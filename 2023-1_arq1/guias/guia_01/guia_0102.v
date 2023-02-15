@@ -1,34 +1,31 @@
 /* 
-    Guia_0101.v
+    Guia_0102.v
 
-    - Converter valor base decimal para base binaria.
+    - Converter valor base binaria para base decimal.
     - Como rodar passando valores por parametro:
         1. compilar:    iverilog -o .\NOME.vvp .\NOME.v
         2. rodar:       vvp .\NOME.vvp +arg0=VALOR_DO_ARG 
 */
 
-module Guia_0101;
+module Guia_0102;
     // define my data
-    reg[8*9:1] nameProgram = "Guia_0101";
+    reg[8*9:1] nameProgram = "Guia_0102";
     integer arg0;
 
     // define program data 
-    integer x;
-    reg[7:0] b = 0;
+    integer x = 0;
+    reg[7:0] b = 8'b0000_0000;
 
     initial begin
         
         // Buscar valor do parametro se possuir um.
-        if ($value$plusargs("arg0=%d", arg0)) begin
-            x = arg0; 
-        end else begin
-            x = 0;
+        if ($value$plusargs("arg0=%b", arg0)) begin
+            b = arg0; 
         end
 
         $display("%s - test", nameProgram);
-        $display("x = %d", x);
-        $display("b = %8b", b);
-        b = x;
-        $display("b = %8b", b);
+        $display("b(2) = %8b", b);
+        x = b;
+        $display("b(10) = %d", x);
     end
 endmodule
