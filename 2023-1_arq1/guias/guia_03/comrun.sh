@@ -30,18 +30,21 @@ else
 		$(mkdir ./output)
 	fi
 
-	#clear output file
+	#remove output file
 	if [ -e "$OUTPUT_FILE" ] ; then
 		$(rm $OUTPUT_FILE)
 	fi
 
+	#remove .vvp extentios files
+	$(rm *.vvp)
+	
 	#echo "FILE_NAME: $FILE_NAME"
 	#echo "OUTPUT_FILE: $OUTPUT_FILE"
-	$(rm *.vvp)
+
 
 	# compile
 	$(iverilog -o ./$FILE_NAME.vvp ./$FILE_NAME.v)
-	$(vvp ./$FILE_NAME.vvp $MY_ARGS >> $OUTPUT_FILE)
+	# $(vvp ./$FILE_NAME.vvp $MY_ARGS >> $OUTPUT_FILE) # rodar programa sem nenhuma entrada do usuario
 	
 	echo "Input (ex: 1 2 3 => arg0=1, arg1=2, arg2=3):"
 	read -a USER_INPUT
@@ -52,14 +55,16 @@ else
 
 		# transformar input do usuario para parametros que serão utilizados pelo programa 
 		MY_ARGS=""
+		USER_INPUT_STR=""
 		for INDEX in "${!USER_INPUT[@]}";
 		do
 		  #echo "$INDEX : ${USER_INPUT[INDEX]}"
-		  MY_ARGS+="+arg$INDEX=${USER_INPUT[INDEX]}"
+		  MY_ARGS+="+arg$INDEX=${USER_INPUT[INDEX]} "
+		  USER_INPUT_STR+="${USER_INPUT[INDEX]} "
 		done
-		#echo $MY_ARGS
+		# echo $MY_ARGS
 	
-		$(echo -e "User Input: $USER_INPUT" >> $OUTPUT_FILE)
+		$(echo -e "User Input: $USER_INPUT_STR" >> $OUTPUT_FILE)
 		$(echo -e "Output:" >> $OUTPUT_FILE)
 		$(vvp ./$FILE_NAME.vvp $MY_ARGS >> $OUTPUT_FILE)
 		$(echo -e "===============================================================\n" >> $OUTPUT_FILE)
