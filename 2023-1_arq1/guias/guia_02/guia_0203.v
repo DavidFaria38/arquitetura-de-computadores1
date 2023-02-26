@@ -1,5 +1,7 @@
 /* 
     Guia_0203.v
+    
+    699415 - David de Sá Vieira de Faria
 
     - Converter valor base binaria para base 4, base 8 e base 16, 
         considerarando partes fracionarias.

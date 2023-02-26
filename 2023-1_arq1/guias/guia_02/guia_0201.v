@@ -1,5 +1,7 @@
 /* 
     Guia_0201.v
+    
+    699415 - David de Sá Vieira de Faria
 
     - Converter valor base binaria para base decimal, 
         considerarando partes fracionarias.

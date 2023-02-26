@@ -1,5 +1,7 @@
 /* 
     Guia_0104.v
+    
+    699415 - David de Sá Vieira de Faria
 
     - Converter valor base binaria para base quaternaria, octal e hexadecimal.
     - Como rodar passando valores por parametro:

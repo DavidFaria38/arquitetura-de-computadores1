@@ -1,5 +1,7 @@
 /* 
     Guia_0102.v
+    
+    699415 - David de Sá Vieira de Faria
 
     - Converter valor base binaria para base decimal.
     - Como rodar passando valores por parametro:

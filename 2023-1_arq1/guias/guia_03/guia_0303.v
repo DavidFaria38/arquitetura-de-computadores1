@@ -1,5 +1,7 @@
 /* 
     Guia_0303.v
+    
+    699415 - David de Sá Vieira de Faria
 
     - Determinar o valor positivo equivalente aos complementos de 2 indicados.
     - Como rodar passando valores por parametro:
@@ -14,6 +16,7 @@ module Guia_0303;
 
     // define program data 
     integer  dec_num = 'd0;
+    integer i;
     reg[7:0] bin_num;
     reg[7:0] bin_num_C1;
     reg[7:0] bin_num_C2;
@@ -32,7 +35,7 @@ module Guia_0303;
         //                                                                      Bit representando o sinal
         //                                                                      |
         // inverter todos os ZEROS depois do bit representante do sinal; ex: 0001_0100 -> 1111_0100
-        for (integer i = 7; i>=0; i=i-1) begin
+        for (i = 7; i>=0; i=i-1) begin
             if (bin_num_C2[i] == 1) begin
                 i = 0; // parar loop
             end else begin

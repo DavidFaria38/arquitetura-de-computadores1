@@ -1,5 +1,7 @@
 /* 
     Guia_0202.v
+    
+    699415 - David de Sá Vieira de Faria
 
     - Converter valor base decimal para base bianrio, 
         considerarando partes fracionarias.

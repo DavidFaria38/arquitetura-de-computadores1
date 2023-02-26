@@ -7,7 +7,7 @@
 #	Step by step:
 #		Obs: 
 #			- Arquivo que será compilado e rodado deve possuir entrada de dados por parametro do vvp.
-#			- Cabe ao usuario definir quais serão as entradas: seu tipo e quantidade
+#			- Cabe ao usuario definir quais serão as entradas do programa: seu tipo e quantidade.
 #			- Nome do parametro deve seguir o seguinte padrão:
 #				* argX - onde X é index do parametro (sempre começando em 0 (ZERO))
 #		1. ./comrun FILE < ./input/FILE.in
@@ -52,7 +52,7 @@ else
 		$(rm $OUTPUT_FILE)
 	fi
 
-	#remove .vvp extentios files
+	#remove *.vvp files
 	$(rm *.vvp)
 	
 	#echo "FILE_NAME: $FILE_NAME"
@@ -63,7 +63,7 @@ else
 	$(iverilog -o ./$FILE_NAME.vvp ./$FILE_NAME.v)
 	# $(vvp ./$FILE_NAME.vvp $MY_ARGS >> $OUTPUT_FILE) # rodar programa sem nenhuma entrada do usuario
 	
-	echo "Input (ex: 1 2 3 => arg0=1, arg1=2, arg2=3):"
+	echo "Input (ex: 10 20 30 => arg0=10, arg1=20, arg2=30):"
 	read -a USER_INPUT
 	while [ -n "$USER_INPUT" ] ; 
 	do

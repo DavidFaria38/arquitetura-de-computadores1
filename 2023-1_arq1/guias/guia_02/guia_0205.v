@@ -1,5 +1,7 @@
 /* 
     Guia_0205.v
+    
+    699415 - David de Sá Vieira de Faria
 
     - Realize as operacoes aritméticas em bianrio 
         considerarando partes fracionarias.
