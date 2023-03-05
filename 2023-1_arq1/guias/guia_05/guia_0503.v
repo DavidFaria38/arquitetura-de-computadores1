@@ -11,14 +11,8 @@
         2. rodar:       vvp .\NOME.vvp
 */
 
-module f5a (
-            output s, 
-            input x,
-            input y);
-    assign s =  (x | ~y);
-endmodule
-
 /*
+    Tabela verdade para seguinte expressao:
     s =  (x | ~y)
     =========
     x   y   s
@@ -27,6 +21,13 @@ endmodule
     1   0   1
     1   1   1
 */
+module f5a (
+            output s, 
+            input x,
+            input y);
+    assign s =  (x | ~y);
+endmodule
+
 module f5b (
             output s, 
             input x,

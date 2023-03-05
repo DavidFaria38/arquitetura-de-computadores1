@@ -11,6 +11,16 @@
         2. rodar:       vvp .\NOME.vvp
 */
 
+/*
+    Tabela verdade para seguinte expressao:
+    s =  (~x & y)
+    =========
+    x   y   s
+    0   0   0
+    0   1   1
+    1   0   0
+    1   1   0
+*/
 module f5a (
             output s, 
             input a,
