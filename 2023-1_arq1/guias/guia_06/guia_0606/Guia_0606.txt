@@ -1,0 +1,29 @@
+Guia_06
+Nome: David de Sa Vieira de Faria
+Matricula: 699415
+
+============================================================================
+
+Guia_0606
+    Obs. Circuito se apresentam em ./circuitos_logisim
+
+    expressao: ((y'+w+z')'.(xyw')')+(ywz+x')'
+               (~(~y|w|~x)&~(x&y&~w))|~((y&w&z)|~x)
+    Tabela verdade: 
+    # x y w z s                               
+    00 0 0 0 0 0     xy\wz 00 01 11 10                          
+    01 0 0 0 1 0        00  0  0  0  0           
+    02 0 0 1 0 0        01  0  0  0  0           
+    03 0 0 1 1 0        11  1  1  0  1          
+    04 0 1 0 0 0        10  1  1  1  1          
+    05 0 1 0 1 0
+    06 0 1 1 0 0     PoS
+    07 0 1 1 1 0     Conjuntos: (0,1,2,3,4,5,6,7), (7,15)
+    08 1 0 0 0 1     Exp.Simp.: x . y'+w'+z'
+    09 1 0 0 1 1                x & (~y|~w|~z)
+    10 1 0 1 0 1
+    11 1 0 1 1 1
+    12 1 1 0 0 1
+    13 1 1 0 1 1
+    14 1 1 1 0 1
+    15 1 1 1 1 0
